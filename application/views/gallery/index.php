@@ -3,6 +3,6 @@
 <head>
 </head>
 <body>
-	lol!
+	This is the gallery!
 </body>
 </html>
