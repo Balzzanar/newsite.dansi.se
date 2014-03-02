@@ -9,7 +9,7 @@
 ?>
 
 <?php #echo form_open_mulitpart('newproducts/upload');?>
-<form class="navbar-form navbar-left" role="search" action="newproducts/newproduct" method="post">
+<form class="navbar-form navbar-left" role="search" action="newproducts/newproduct" method="post" enctype="multipart/form-data">
 
 <div class="col-md-6"> <!-- Form Start -->	
 	<p>Produktnamn och bild</p>

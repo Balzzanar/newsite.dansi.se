@@ -63,7 +63,7 @@ class Newproducts extends CI_Controller {
 				$product['filename'] = $_POST['userfile'];
 				$is_new_data = true;
 				echo 'lol';
-				$this->products_model->uploadImg();
+				$product['uploaded_file'] = $this->products_model->uploadImg();
 			} 
 
 			if (! $is_new_data) 

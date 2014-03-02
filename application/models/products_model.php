@@ -49,7 +49,7 @@ class Products_model extends CI_Model
 	{
 		$config = array (
 				'allowed_types' => 'jpg|jpeg|png',
-				'upload_path' => realpath(APPPATH.'../public')
+				'upload_path' => realpath(APPPATH.'../public/uploads')
 			);
 		$this->load->library('upload', $config);
 
@@ -64,9 +64,8 @@ class Products_model extends CI_Model
             $errUpload = "";
             $uploadData = $this->upload->data();
             $path = $uploadData['file_name'];
-    }
-
-		echo 'adfgdsf';
+            return $path;
+    	}
 	}
 
 }
