@@ -9,12 +9,10 @@
 | Takes care of the crud operations for the products.
 |
 */
-class Products_model extends CI_Model {
+class Products_model extends CI_Model 
+{
 
 
-	public function __construct(){
-
-	}
 
 	/**
 	 * Collects all the products from the database
@@ -22,7 +20,8 @@ class Products_model extends CI_Model {
 	 * 
 	 * @return array
 	 */
-	public function get_all_products(){
+	public function get_all_products()
+	{
 		$product = array(
 				"id_product"	=> "1"
 				,"name"			=> "Test Product"
@@ -40,7 +39,34 @@ class Products_model extends CI_Model {
 	 *
 	 * @return array
 	 */
-	public function get_project_by_id($id_product){
+	public function get_project_by_id($id_product)
+	{
 
 	}
+
+
+	public function uploadImg()
+	{
+		$config = array (
+				'allowed_types' => 'jpg|jpeg|png',
+				'upload_path' => realpath(APPPATH.'../public')
+			);
+		$this->load->library('upload', $config);
+
+
+		if ( ! $this->upload->do_upload())
+        {
+            echo("{errors: {id:'name', msg:'" . $this->upload->display_errors() . "'}}");
+        return;
+        }    
+        else
+        {
+            $errUpload = "";
+            $uploadData = $this->upload->data();
+            $path = $uploadData['file_name'];
+    }
+
+		echo 'adfgdsf';
+	}
+
 }
