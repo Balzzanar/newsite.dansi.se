@@ -41,7 +41,7 @@
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['gallery'] = 'gallery';
-$route['newproducts'] = 'newproducts';
+$route['newproducts'] = 'newproducts/index';
 
 
 /* End of file routes.php */

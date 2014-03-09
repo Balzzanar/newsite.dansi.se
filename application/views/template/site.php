@@ -2,4 +2,7 @@
 
 <?php echo $main; ?>
 
-<?php echo $footer; ?>
+<?php 
+	/* Not all ppages have a footer. */
+	echo (isset($footer) ? $footer : ''); 
+?>

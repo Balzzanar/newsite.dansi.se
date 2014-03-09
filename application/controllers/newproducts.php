@@ -15,13 +15,13 @@ class Newproducts extends CI_Controller {
 
 	public function index()
 	{	
-		
-
-		$main['main_content'] = $this->load->view('newproducts/index', '', true);
+		$this->load->model('products_model');
+		$data['products'] = $this->products_model->get_all_products();
+		$main['main_content'] = $this->load->view('newproducts/index', $data, true);
 
 		$data['header'] = $this->load->view('template/header', '', true);
 		$data['main'] = $this->load->view('template/main', $main, true);
-		$data['footer'] = $this->load->view('template/footer', '', true);
+	//	$data['footer'] = $this->load->view('template/footer', '', true);
 
 		$this->load->view('template/site', $data);
 	}
@@ -29,41 +29,30 @@ class Newproducts extends CI_Controller {
 
 	public function newproduct()
 	{
-
 		$this->load->model('products_model');
-		
-		$this->products_model->uploadImg();
-		die("done");
 
-		if (count($_POST > 0))
+		if ($this->input->post())
 		{
+			$post = $this->input->post();
 			$is_new_data = false;
 			$product = array();
 
-			if (isset($_POST['p_name']) && $_POST['p_name'] != '')
+			if (isset($post['p_name']) && $post['p_name'] != '')
 			{
-				$product['name'] = $_POST['p_name'];
+				$product['name'] = $post['p_name'];
 				$is_new_data = true;
 			} 
 
-			if (isset($_POST['p_price']) && $_POST['p_price'] != '')
+			if (isset($post['p_price']) && $post['p_price'] != '')
 			{
-				$product['price'] = $_POST['p_price'];
+				$product['price'] = $post['p_price'];
 				$is_new_data = true;
 			} 
 
-			if (isset($_POST['p_description']) && $_POST['p_description'] != '')
+			if (isset($post['p_description']) && $post['p_description'] != '')
 			{
-				$product['description'] = $_POST['p_description'];
+				$product['descript'] = $post['p_description'];
 				$is_new_data = true;
-			} 
-
-			if (isset($_POST['userfile']) && $_POST['userfile'] != '')
-			{
-				$product['filename'] = $_POST['userfile'];
-				$is_new_data = true;
-				echo 'lol';
-				$product['uploaded_file'] = $this->products_model->uploadImg();
 			} 
 
 			if (! $is_new_data) 
@@ -72,7 +61,12 @@ class Newproducts extends CI_Controller {
 			}
 			else 
 			{
-				var_dump($product);
+				/* Try to upload the selected image. */
+				$product['uploaded_file'] = $this->products_model->uploadImg();	
+
+				/* Store the new product. */
+				$this->products_model->store_new_product($product);
+				redirect('/newproducts');
 			}
 		} 
 		else 
