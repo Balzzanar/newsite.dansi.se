@@ -48,13 +48,14 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';	//PORT 8888 ? 
+$db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'dansiweb';
 $db['default']['password'] = 'dansiweb';
 $db['default']['database'] = 'dansi';
+//$db['default']['port'] 	   = 8888;
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
-$db['default']['pconnect'] = TRUE;
+$db['default']['pconnect'] = FALSE;
 $db['default']['db_debug'] = TRUE;
 $db['default']['cache_on'] = FALSE;
 $db['default']['cachedir'] = '';
