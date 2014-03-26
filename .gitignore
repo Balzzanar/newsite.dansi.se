@@ -1,6 +1,5 @@
 .DS_Store
 
-# Ignore updates on the database config file.
 application/config/database.php
 
 application/cache/*
