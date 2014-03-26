@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'dansiweb';
-$db['default']['password'] = 'dansiweb';
+$db['default']['password'] = 'sdfhjsjdhf';
 $db['default']['database'] = 'dansi';
 //$db['default']['port'] 	   = 8888;
 $db['default']['dbdriver'] = 'mysql';
