@@ -12,7 +12,7 @@
 class Products_model extends CI_Model 
 {
 
-
+	//TODO: Write a deploy script to change the database login!
 
 	/**
 	 * Collects all the products from the database
@@ -23,9 +23,6 @@ class Products_model extends CI_Model
 	public function get_all_products()
 	{
 		$this->load->database();
-		
-
-		die("done");
 
 		$list = array();
 		$product = array(
