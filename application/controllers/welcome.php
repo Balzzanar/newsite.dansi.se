@@ -17,6 +17,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$main['main_content'] = $this->load->view('welcome/index', '', true);
+		$main['active'] = 'home';
 
 		$data['header'] = $this->load->view('template/header', '', true);
 		$data['main'] = $this->load->view('template/main', $main, true);

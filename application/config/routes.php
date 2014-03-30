@@ -39,8 +39,10 @@
 */
 
 $route['default_controller'] = 'welcome';
+$route['home'] = 'welcome';
 $route['404_override'] = '';
 $route['gallery'] = 'gallery';
+$route['contact'] = 'contact';
 $route['newproducts'] = 'newproducts/index';
 
 

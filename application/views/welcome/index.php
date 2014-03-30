@@ -7,32 +7,93 @@
 *
 */
 ?>
-<div class="container theme-showcase">
+ <!-- Main Site container begin -->
+    <div class="container">
 
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-	<h1>Välkommen!</h1>
-	<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-	<p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+        <!-- Flyer -->
+        <div class="span9 offset1">
+            <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="active item">
+                        <img src="holder.js/870x500">
+                        <div class="carousel-caption">
+                            <h4>First Thumbnail label</h4>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                                Donec id elit non mi porta gravida at eget metus. Nullam
+                                id dolor id nibh ultricies vehicula ut id elit.</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="holder.js/870x500">
+                        <div class="carousel-caption">
+                            <h4>Second Thumbnail label</h4>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                                Donec id elit non mi porta gravida at eget metus. Nullam
+                                id dolor id nibh ultricies vehicula ut id elit.</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="holder.js/870x500">
+                        <div class="carousel-caption">
+                            <h4>Thierd Thumbnail label</h4>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                                Donec id elit non mi porta gravida at eget metus. Nullam
+                                id dolor id nibh ultricies vehicula ut id elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            </div>
+        </div>
+
+        <!-- Container for front images -->
+        <div class="span12">
+            <div class="well well-large span3 std-box-color">
+                LOLE!
+                <a href="#" class="thumbnail">
+                    <img src="holder.js/300x200">
+                </a>
+                Hejsan, är har vi en beskrivande text!
+            </div>
+
+            <div class="well well-large span3 std-box-color">
+                LOLE!
+                <a href="#" class="thumbnail">
+                    <img src="holder.js/300x200">
+                </a>
+                Hejsan, är har vi en beskrivande text!
+            </div>
+
+            <div class="well well-large span3 std-box-color">
+                LOLE!
+                <a href="#" class="thumbnail">
+                    <img src="holder.js/300x200">
+                </a>
+                Hejsan, är har vi en beskrivande text!
+            </div>
+
+            <div class="well well-large span3 std-box-color">
+                LOLE!
+                <a href="#" class="thumbnail">
+                    <img src="holder.js/300x200">
+                </a>
+                Hejsan, är har vi en beskrivande text!
+            </div>
+        </div>
+
+<!-- End Main Site container -->
 </div>
-
-<div class="page-header">
-	<h1>Min produktion: </h1>
-</div>
-<div class="row">
-	<div class="col-sm-2" id="welcome_productionlist">
-		<ul class="list-group">
-			<li class="list-group-item">Örhängen</li>
-			<li class="list-group-item">Halsband</li>
-			<li class="list-group-item">Ringar</li>
-			<li class="list-group-item">Armband</li>
-			<li class="list-group-item">Änglar</li>
-		</ul>
-	</div><!-- /.col-sm-4 -->
-</div>
-
-
-
 
 
 

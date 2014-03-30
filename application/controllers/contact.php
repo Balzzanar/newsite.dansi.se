@@ -2,24 +2,21 @@
 
 /*
 |----------------------------------------------------
-| Gallery
+| Contact
 |----------------------------------------------------
 |
-| Controller to handle the image gallery page. 
-| Will just show images of the products, they will be
-| clickable where the page for viewing a single
-| product is shown, with the chosen product. 
+| Controller to show a site of contact information.
 |
-| Url = '/gallery'
+| Url = '/contact'
 |
 */
-class Gallery extends CI_Controller {
+class Contact extends CI_Controller {
 
 	
 	public function index()
 	{
-		$main['main_content'] = $this->load->view('gallery/index', '', true);
-		$main['active'] = 'gallery';	
+		$main['main_content'] = $this->load->view('contact/index', '', true);
+		$main['active'] = 'contact';
 
 		/* Load the site template with the page. */
 		$data['header'] = $this->load->view('template/header', '', true);
