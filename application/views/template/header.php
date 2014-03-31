@@ -7,17 +7,17 @@
         $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
         $this->output->set_header("Pragma: no-cache");
     ?>
-	<meta charset="utf-8">
+    	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- <script language="javascript" type="text/javascript" src="public/js/jquery-2.0.3.min.js"></script> -->
 	
-    <!-- Site Specific css -->
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    	<!-- Site Specific css -->
+    	<link rel="stylesheet" type="text/css" href="public/css/style.css" media="screen">
 
-    <!-- Add page specific css later on -->
+    	<!-- Add page specific css later on -->
     
-    <!-- Bootstrap css -->
-    <link href="public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<!-- Bootstrap css -->
+    	<link href="public/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-	<title>Dansi</title>
+    	<title>Dansi</title>
 </head>
