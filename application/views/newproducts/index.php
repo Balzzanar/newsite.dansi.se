@@ -9,68 +9,81 @@
 ?>
 
 <?php #echo form_open_mulitpart('newproducts/upload');?>
-<form class="navbar-form navbar-left" role="search" action="newproducts/newproduct" method="post" enctype="multipart/form-data">
+<form class="form-horizontal" action="newproducts/newproduct" method="post" enctype="multipart/form-data">
+<div class="span6 new-product-form"> <!-- Form Start -->	
+	<div class="well new-product-form">
+		<b>Produktnamn och bild</b>
+	</div>
+	<div class="new-product-form">
+        <div>
+       		<input type="file" class="form-control" placeholder="img" name="userfile">
+        </div>
 
-<div class="col-md-6"> <!-- Form Start -->	
-	<p>Produktnamn och bild</p>
+        <div>
+	        <input type="text" class="form-control" placeholder="Produkt Namn" name="p_name">
+        </div>
 
-	<div class="input-group input-group-addonlg">
-	  
-		<span class="input-group-addon"></span>
-		<input type="text" class="form-control" placeholder="Produkt Namn" name="p_name">
+	<div>
+                <input type="text" class="form-control" placeholder="Pris" name="p_price">
+        </div>
 
-	
-	  	<span class="input-group-addon"></span>
-	  	<input type="file" class="form-control" placeholder="img" name="userfile">
-	
+	<div>
+                <input type="text" class="form-control" placeholder="Beskrivning" name="p_description">
+                <input id="cur_cat" type="text" name="p_cat">
+        </div>
+
+	<div>
+		<div class="btn-group">
+		  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+		    <div id="category-button">Kategori</div>
+		    <span class="caret"></span>
+		  </a>
+		  <ul class="dropdown-menu">
+	                  <li><a href="javascript:setActiveCategory('0')">Örhänge</a></li>
+        	          <li><a href="javascript:setActiveCategory('1')">Halsband</a></li>
+                	  <li><a href="javascript:setActiveCategory('2')">Armband</a></li>
+		  </ul>
+		</div>	
 	</div>
 
-	<br />
-	<br />
-
-
-	<div class="input-group input-group-addonlg col-sm-4">
+        <div>
+		<br />
+                <button type="submit" class="btn btn-default">Skapa</button>
+        </div>
 	
-		<span class="input-group-addon"></span>
-		<input type="text" class="form-control" placeholder="Pris" name="p_price">
-
-	</div>
-
-
-	<br />
-	<br />
-
-	<div class="input-group input-group-addonlg">
-	
-		<span class="input-group-addon"></span>
-		<input type="text" class="form-control" placeholder="Beskrivning" name="p_description">
-
-	</div>
-
-	<br />
-
-	<button type="submit" class="btn btn-default">Submit</button>
+</div>
 	
 	<br />
 	<br />
-<form />
+
+</div>
+
+	
+</form>
 </div> <!-- Form END -->
 
-<div class="col-md-8">
-
-	<table class="col-md-6 table table-striped">
+<div class="clear" ></div>
+<div class="span12">
+	<div class="well span6">
+                <b>Befintliga prdukter</b>
+        </div>
+	<table class="span12 table table-striped">
 	  <tr>
 	  	<th>Namn</th>
-	  	<th>Price</th>
+	  	<th>Pris</th>
 	  	<th>Beskrivning</th>
 	  	<th>Bild</th>
+	  	<th>Kategori</th>
+	  	<th>Ta bort</th>
 	  </tr>
 	  <?php foreach ($products as $prod):?>
 	  <tr>
-	  	<td><?php echo $prod['name']; ?></td>
-	  	<td><?php echo $prod['price']; ?></td>
-	  	<td><?php echo $prod['descript']; ?></td>
-	  	<td><?php echo $prod['img']; ?></td>
+	  	<td><?php echo $prod->name; ?></td>
+	  	<td><?php echo $prod->price; ?></td>
+	  	<td><?php echo $prod->descript; ?></td>
+	  	<td><?php echo $prod->img; ?></td>
+	  	<td><?php echo ''; ?></td>
+	  	<td><a href="#">X</a></td>
 	  </tr>
 	<?php endforeach; ?>
 	</table>
@@ -84,6 +97,14 @@
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="public/bootstrap/js/bootstrap.min.js"></script>
 <script src="public/bootstrap/js/holder.js"></script>
+<script src="public/js/scripts.js"></script>
+
+<script>
+$(document).ready(function() {
+	$('#cur_cat').hide();
+});
+</script>
+
 </body>
 </html>
 

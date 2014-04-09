@@ -43,7 +43,10 @@ $route['home'] = 'welcome';
 $route['404_override'] = '';
 
 $route['contact'] = 'contact';
+
 $route['newproducts'] = 'newproducts/index';
+#$route['newproducts'] = 'error';
+
 $route['items'] = 'item/listing';
 $route['item/:num'] = 'item/show_item/$1';
 

@@ -37,5 +37,8 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 
+define('MASTER_IP_RED_PRODUCTS', '85.229.134.224');
+
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

@@ -11,9 +11,6 @@
 */
 class Products_model extends CI_Model 
 {
-
-	//TODO: Write a deploy script to change the database login!
-
 	/**
 	 * Collects all the products from the database
 	 * and returns them in an array.
@@ -24,17 +21,10 @@ class Products_model extends CI_Model
 	{
 		$this->load->database();
 
-		$list = array();
-		$product = array(
-				"id_product"	=> "1"
-				,"name"			=> "Test Product"
-				,"price"		=> "250"
-				,"descript"		=> "Detta är en mycket fin sak!"
-				,"img"			=> "pic.jpg"
-				,"img_thumb"	=> "pic_thumb.jpg"
-			);
-		$list[] = $product;
-		return $list;
+		$sql = "CALL dansi_products_get()";
+		$query = $this->db->query($sql);
+		$result = $query->result(); 
+		return $result;
 	}
 
 
@@ -65,7 +55,7 @@ class Products_model extends CI_Model
 
 		if ( ! $this->upload->do_upload())
         {
-           // echo("{errors: {id:'name', msg:'" . $this->upload->display_errors() . "'}}");
+		echo("{errors: {id:'name', msg:'" . $this->upload->display_errors() . "'}}");
         	return;
         }    
         else
@@ -78,13 +68,22 @@ class Products_model extends CI_Model
 	}
 
 	/**
-	 * 
+	 * Stores the new product to the database!
 	 */
 	public function store_new_product($product)
 	{
+		$this->load->database();
 		echo 'Will store this product to the database: '."<br /><br />";
 		var_dump($product);
-		die;
+		$sql = "CALL dansi_product_new(?,?,?,?,?)";
+		$params = array(
+			$product['name'],
+			$product['price'],
+			$product['descript'],
+			$product['uploaded_file'],
+			'' // No thumb image, so far!
+		);
+                $query = $this->db->query($sql, $params);
 	}
 
 }
