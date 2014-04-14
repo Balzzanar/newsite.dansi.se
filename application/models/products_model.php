@@ -9,10 +9,10 @@
 | Takes care of the crud operations for the products.
 |
 | Product categorys:
-| 	0 == 'Örhänge'
-| 	1 == 'Halsband'
-| 	2 == 'Armband'
-| 	3 == ''
+| 	1 == 'Örhänge'
+| 	2 == 'Halsband'
+| 	3 == 'Armband'
+| 	4 == ''
 |
 */
 class Products_model extends CI_Model 

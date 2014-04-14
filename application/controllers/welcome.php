@@ -13,10 +13,19 @@
 */
 class Welcome extends CI_Controller {
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('products_model');
+    }
+
 
 	public function index()
 	{
-		$main['main_content'] = $this->load->view('welcome/index', '', true);
+        $products = $this->products_model->get_dummy_items(3);
+        $data['products'] = $products;
+
+		$main['main_content'] = $this->load->view('welcome/index', $data, true);
 		$main['active'] = 'home';
 
 		$data['header'] = $this->load->view('template/header', '', true);

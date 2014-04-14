@@ -59,37 +59,15 @@
 
         <!-- Container for front images -->
         <div class="span12">
-            <div class="well well-large span3 std-box-color">
-                LOLE!
-                <a href="#" class="thumbnail">
-                    <img src="holder.js/300x200">
-                </a>
-                Hejsan, är har vi en beskrivande text!
-            </div>
-
-            <div class="well well-large span3 std-box-color">
-                LOLE!
-                <a href="#" class="thumbnail">
-                    <img src="holder.js/300x200">
-                </a>
-                Hejsan, är har vi en beskrivande text!
-            </div>
-
-            <div class="well well-large span3 std-box-color">
-                LOLE!
-                <a href="#" class="thumbnail">
-                    <img src="holder.js/300x200">
-                </a>
-                Hejsan, är har vi en beskrivande text!
-            </div>
-
-            <div class="well well-large span3 std-box-color">
-                LOLE!
-                <a href="#" class="thumbnail">
-                    <img src="holder.js/300x200">
-                </a>
-                Hejsan, är har vi en beskrivande text!
-            </div>
+            <?php foreach ($products as $product):?>
+                <div class="well well-large span3 best-sale-prod">
+                    <?php echo $product->name; ?>
+                    <a href="<?php echo base_url()."item/".$product->idproduct ?>" class="thumbnail">
+                        <img src="holder.js/300x200">
+                    </a>
+                    <?php echo $product->descript; ?>
+                </div>
+            <?php endforeach; ?>
         </div>
 
 <!-- End Main Site container -->

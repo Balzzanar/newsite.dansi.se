@@ -28,6 +28,9 @@ class Item extends CI_Controller {
 	{
 		$products = $this->products_model->get_dummy_items(4);
 		$data['products'] = $products;
+
+        /* The best selling products */
+        $data['best_products'] = $this->products_model->get_dummy_items(3);
 		$data['show_top_sellers'] = true;
 		$data['active_category'] = '';
 

@@ -39,9 +39,9 @@
 		    <span class="caret"></span>
 		  </a>
 		  <ul class="dropdown-menu">
-	                  <li><a href="javascript:setActiveCategory('0')">Örhänge</a></li>
-        	          <li><a href="javascript:setActiveCategory('1')">Halsband</a></li>
-                	  <li><a href="javascript:setActiveCategory('2')">Armband</a></li>
+	                  <li><a href="javascript:setActiveCategory('1')">Örhänge</a></li>
+        	          <li><a href="javascript:setActiveCategory('2')">Halsband</a></li>
+                	  <li><a href="javascript:setActiveCategory('3')">Armband</a></li>
 		  </ul>
 		</div>	
 	</div>
