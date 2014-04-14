@@ -48,7 +48,8 @@ $route['newproducts'] = 'newproducts/index';
 #$route['newproducts'] = 'error';
 
 $route['items'] = 'item/listing';
-$route['item/:num'] = 'item/show_item/$1';
+$route['item/(:num)'] = 'item/show_item/$1';
+$route['items/(:num)'] = 'item/category_listing/$1';
 
 
 /* End of file routes.php */

@@ -12,12 +12,12 @@
 	<!-- <script language="javascript" type="text/javascript" src="public/js/jquery-2.0.3.min.js"></script> -->
 	
     	<!-- Site Specific css -->
-    	<link rel="stylesheet" type="text/css" href="public/css/style.css" media="screen">
+    	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'public/css/style.css'; ?>" media="screen">
 
     	<!-- Add page specific css later on -->
     
     	<!-- Bootstrap css -->
-    	<link href="public/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    	<link href="<?php echo base_url().'public/bootstrap/css/bootstrap.min.css'; ?>" rel="stylesheet" media="screen">
 
     	<title>Dansi</title>
 </head>

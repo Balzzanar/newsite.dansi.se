@@ -8,6 +8,12 @@
 | Model to handle the products that exists on the site.
 | Takes care of the crud operations for the products.
 |
+| Product categorys:
+| 	0 == 'Örhänge'
+| 	1 == 'Halsband'
+| 	2 == 'Armband'
+| 	3 == ''
+|
 */
 class Products_model extends CI_Model 
 {
@@ -84,6 +90,28 @@ class Products_model extends CI_Model
 			'' // No thumb image, so far!
 		);
                 $query = $this->db->query($sql, $params);
+	}
+
+	/**
+	* Dummy data!
+	* 
+	*/
+	public function get_dummy_items($num)
+	{
+		$arr = array();	
+		for ($i = 0; $i < $num; $i++)
+		{
+			$res = new stdClass();
+			$res->name = 'Test item 1';
+			$res->price = '1';
+			$res->idproduct = '22';
+			$res->descript = 'Hejsan test test';
+			$res->img = 'img src!!';
+			$res->img_thumb = 'thumb!!';
+			$arr[] = $res;			
+		}
+		
+		return $arr;
 	}
 
 }
