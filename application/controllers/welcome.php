@@ -10,6 +10,8 @@
 |
 | Url = '/'
 |
+| Main color theme:
+| http://www.colorcombos.com/color-schemes/171/ColorCombo171.html
 */
 class Welcome extends CI_Controller {
 

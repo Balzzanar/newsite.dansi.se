@@ -16,6 +16,7 @@
 
     	<!-- Add page specific css later on -->
     	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'public/css/item/item.css'; ?>" media="screen">
+    	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'public/css/contact/contact.css'; ?>" media="screen">
 
     	<!-- Bootstrap css -->
     	<link href="<?php echo base_url().'public/bootstrap/css/bootstrap.min.css'; ?>" rel="stylesheet" media="screen">

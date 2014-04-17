@@ -3,7 +3,7 @@
 <div class="container">
 
     <!-- Person description -->
-    <div class="hero-unit std-box-color">
+    <div id="contact-blob" class="hero-unit std-box-color">
         <h1>This is me</h1>
         <p>Firstname Lastname</p>
         <div class="row">
