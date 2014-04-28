@@ -1,18 +1,19 @@
 body{
-    /*  background: rgb(11, 3, 23);  */
-    background: white;
+    background-color: #732C7B;
 }
-
 /* Standard box color */
 .std-box-color{
     /* background: #b021ff; */
     background: white;
 }
+/* Rounded */
+/*
 .std-box-color, .navbar-inner{
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
 }
+*/
 
 /* Don't want borders on the table for contact information. */
 .contact-table td{
@@ -28,6 +29,17 @@ body{
 	float: none;
 	clear: both;
 }
+
+/* Navigation bar */
+#dansi-navbar .navbar *{
+    background-color: #421C52;
+    color: #FFFFFF;
+    border: 0;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
 /*
 -----------------------------------------------
     Responsiveness stuff!

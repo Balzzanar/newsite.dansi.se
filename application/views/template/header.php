@@ -11,15 +11,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- <script language="javascript" type="text/javascript" src="public/js/jquery-2.0.3.min.js"></script> -->
 	
-    	<!-- Site Specific css -->
-    	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'public/css/style.css'; ?>" media="screen">
+    	<!-- Bootstrap css -->
+    	<link href="<?php echo base_url().'public/bootstrap/css/bootstrap.min.css'; ?>" rel="stylesheet" media="screen">
 
     	<!-- Add page specific css later on -->
     	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'public/css/item/item.css'; ?>" media="screen">
     	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'public/css/contact/contact.css'; ?>" media="screen">
 
-    	<!-- Bootstrap css -->
-    	<link href="<?php echo base_url().'public/bootstrap/css/bootstrap.min.css'; ?>" rel="stylesheet" media="screen">
+    	<!-- Site Specific css -->
+    	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'public/css/style.css'; ?>" media="screen">
 
     	<title>Dansi</title>
 </head>

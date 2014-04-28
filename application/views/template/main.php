@@ -1,6 +1,6 @@
 <body>
 
-<div class="container">
+<div id="dansi-navbar" class="container">
 
     <!-- Navigation bar -->
     <div class="navbar">
@@ -34,6 +34,7 @@
             </div>
         </div>
     </div>
+</div>
 
     <?php echo $main_content; ?>
 </div>

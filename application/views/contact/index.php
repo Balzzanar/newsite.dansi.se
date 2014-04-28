@@ -19,21 +19,26 @@
                 non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             </div>
         </div>
+
+        <br />
+        <!-- Contact Information Table -->
+        <div class="span4">
+            <table class="table contact-table">
+                <tr>
+                    <td>Email:</td>
+                    <td>some.address@email.com</td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td>123 4567891</td>
+                </tr>
+            </table>
+        </div>
+
+        <br />
+
     </div>
 
-    <!-- Contact Information Table -->
-    <div class="span4">
-        <table class="table contact-table">
-            <tr>
-                <td>Email:</td>
-                <td>some.address@email.com</td>
-            </tr>
-            <tr>
-                <td>Phone:</td>
-                <td>123 4567891</td>
-            </tr>
-        </table>
-    </div>
 
 <!-- End Main Site container -->
 </div>
