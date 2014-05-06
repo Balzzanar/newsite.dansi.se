@@ -1,25 +1,27 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <?php
-        $this->output->set_header("HTTP/1.0 200 OK");
-        $this->output->set_header("HTTP/1.1 200 OK");
-        $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-        $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
-        $this->output->set_header("Pragma: no-cache");
-    ?>
-    	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <script language="javascript" type="text/javascript" src="public/js/jquery-2.0.3.min.js"></script> -->
-	
-    	<!-- Bootstrap css -->
-    	<link href="<?php echo base_url().'public/bootstrap/css/bootstrap.min.css'; ?>" rel="stylesheet" media="screen">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    	<!-- Add page specific css later on -->
-    	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'public/css/item/item.css'; ?>" media="screen">
-    	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'public/css/contact/contact.css'; ?>" media="screen">
+    <title>Carousel Template for Bootstrap</title>
 
-    	<!-- Site Specific css -->
-    	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'public/css/style.css'; ?>" media="screen">
+    <!-- Bootstrap core CSS -->
+    <link href="<?php echo base_url().'public/bootstrap/css/bootstrap.min.css'; ?>" rel="stylesheet">
 
-    	<title>Dansi</title>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for general stuff on the site -->
+    <link href="<?php echo base_url().'public/css/styles.css'; ?>" rel="stylesheet">
+
+    <!-- Custom styles for other pages -->
+    <link href="<?php echo base_url().'public/css/item/item.css'; ?>" rel="stylesheet">
 </head>
+

@@ -103,7 +103,7 @@ class Products_model extends CI_Model
 		{
 			$res = new stdClass();
 			$res->name = 'Test item 1';
-			$res->price = '1';
+			$res->price = '195';
 			$res->idproduct = '22';
 			$res->descript = 'Hejsan test test';
 			$res->img = 'img src!!';

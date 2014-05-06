@@ -7,71 +7,114 @@
 *
 */
 ?>
- <!-- Main Site container begin -->
-    <div class="container">
 
-        <!-- Flyer -->
-        <div class="span9 offset1">
-            <div id="myCarousel" class="carousel slide">
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <?php $index = 0; ?>
+    <ol class="carousel-indicators">
+    <?php foreach($products as $product): ?>
+        <li data-target="#myCarousel" data-slide-to="<?php echo $index; ?>" <?php echo ($index == 0 ? 'class="active"' : ''); ?>></li>
+        <?php $index++; ?>
+    <?php endforeach; ?>
+    </ol>
 
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                    <div class="active item">
-                        <img src="holder.js/870x500">
-                        <div class="carousel-caption">
-                            <h4>First Thumbnail label</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                                Donec id elit non mi porta gravida at eget metus. Nullam
-                                id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
-                    </div>
+    <!-- The flayers -->
+    <?php $index = 0; ?>
+    <div class="carousel-inner">
+    <?php foreach($products as $product): ?>
 
-                    <div class="item">
-                        <img src="holder.js/870x500">
-                        <div class="carousel-caption">
-                            <h4>Second Thumbnail label</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                                Donec id elit non mi porta gravida at eget metus. Nullam
-                                id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img src="holder.js/870x500">
-                        <div class="carousel-caption">
-                            <h4>Thierd Thumbnail label</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                                Donec id elit non mi porta gravida at eget metus. Nullam
-                                id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
-                    </div>
+        <div <?php echo ($index == 0 ? 'class="item active"' : 'class="item"');?>>
+            <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1><?php echo $product->name; ?></h1>
+                    <p><?php echo $product->descript . "<br />" . $product->price . "kr"; ?></p>
+                    <p><a class="btn btn-lg btn-primary" href="<?php echo base_url().'item/'.$product->idproduct; ?>" role="button">Visa</a></p>
                 </div>
-                <!-- Carousel nav -->
-                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
             </div>
         </div>
 
-        <!-- Container for front images -->
-        <div class="span12">
-            <?php foreach ($products as $product):?>
-                <div class="well well-large span3 best-sale-prod">
-                    <?php echo $product->name; ?>
-                    <a href="<?php echo base_url()."item/".$product->idproduct ?>" class="thumbnail">
-                        <img src="holder.js/300x200">
-                    </a>
-                    <?php echo $product->descript; ?>
-                </div>
-            <?php endforeach; ?>
-        </div>
+        <?php $index++; ?>
+    <?php endforeach; ?>
 
-<!-- End Main Site container -->
-</div>
+
+
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div><!-- /.carousel -->
+
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+    <!-- Three columns of text below the flayer -->
+    <div class="row">
+
+        <?php foreach($products as $product): ?>
+            <div class="col-lg-4">
+                <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+                <h2><?php echo $product->name; ?></h2>
+                <p><?php echo $product->descript . " To the price of: " . $product->price; ?></p>
+                <p><a class="btn btn-default" href="<?php echo base_url().'item/'.$product->idproduct; ?>" role="button">Visa &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+        <?php endforeach; ?>
+
+    </div><!-- /.row -->
+
+
+
+
+
+    <!-- START THE FEATURETTES -->
+    <!--
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    -->
+    <!-- /END THE FEATURETTES -->
+
 
 
 

@@ -26,7 +26,7 @@ class Item extends CI_Controller {
 	 */
 	public function listing()
 	{
-		$products = $this->products_model->get_dummy_items(4);
+		$products = $this->products_model->get_dummy_items(6);
 		$data['products'] = $products;
 
         /* The best selling products */

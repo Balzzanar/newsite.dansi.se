@@ -1,42 +1,47 @@
 <body>
 
-<div id="dansi-navbar" class="container">
+<!-- NAVBAR
+================================================== -->
+<div class="navbar-wrapper">
+    <div class="container">
 
-    <!-- Navigation bar -->
-    <div class="navbar">
-        <div class="navbar-inner">
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
             <div class="container">
-
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-
-                <a class="brand" href="#">Dansi</a>
-
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <li <?php echo ($active == 'home' ? 'class="active"' : ''); ?>><a href="<?php echo base_url().'home'; ?>">Home</a></li>
-                        <li <?php echo ($active == 'contact' ? 'class="active"' : ''); ?>><a href="<?php echo base_url().'contact'; ?>">Contact</a></li>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project name</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Galleri <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li <?php echo ($active == 'gallery' ? 'class="active"' : ''); ?>><a href="<?php echo base_url().'items'; ?>">Allt</a></li>
-                                <li><a href="<?php echo base_url().'items/1'; ?>">Örhänge</a></li>
-                                <li><a href="<?php echo base_url().'items/2'; ?>">Halsband</a></li>
-                                <li><a href="<?php echo base_url().'items/3'; ?>">Armband</a></li>
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
-
             </div>
         </div>
+
     </div>
 </div>
 
-    <?php echo $main_content; ?>
-</div>
+<?php echo $main_content; ?>
 
-</body>
+
+
