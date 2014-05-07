@@ -7,8 +7,6 @@
 *
 */
 
-/*
-
 ?>
 
 <div class="container">
