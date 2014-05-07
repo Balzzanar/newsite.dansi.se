@@ -1,24 +1,14 @@
 <?php 
 /*
 * Package: View
-* Controller: Gallery
+* Controller: Item
 *
-* The gallery view for dansi.se
+* The items view for dansi.se
 *
 */
 
 /*
-The main object for a product!
 
-<div class="well well-large span3 std-box-color">
-	LOLE!
-	<a href="item.html" class="thumbnail">
-		<img src="holder.js/300x200">
-	</a>
-	Hejsan, är har vi en beskrivande text!
-</div>
-
-*/
 ?>
 
 <div class="container">
