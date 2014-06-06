@@ -17,7 +17,7 @@ class Newproducts extends CI_Controller {
 
 	public function index()
 	{	
-		if ($_SERVER['REMOTE_ADDR'] != MASTER_IP_RED_PRODUCTS)
+		if ($_SERVER['REMOTE_ADDR'] == MASTER_IP_RED_PRODUCTS)
 		{
 			redirect('/');				
 		}
