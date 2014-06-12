@@ -33,15 +33,23 @@ class Products_model extends CI_Model
 		return $result;
 	}
 
-
-	/**
-	 * Returns a product given it's id.
-	 *
-	 * @return array
-	 */
+    /**
+     * Returns a product given it's id.
+     *
+     * @param $id_product
+     * @return array
+     */
 	public function get_project_by_id($id_product)
 	{
+        $this->load->database();
 
+        $sql = "CALL dansi_product_get()";
+        $params = array(
+            $id_product
+        );
+        $query = $this->db->query($sql, $params);
+        $result = $query->result();
+        return $result;
 	}
 
 	/**
