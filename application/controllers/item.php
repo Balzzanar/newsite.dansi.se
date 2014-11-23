@@ -35,7 +35,7 @@ class Item extends CI_Controller {
 		$data['active_category'] = '';
 
 		$main['main_content'] = $this->load->view('item/listing', $data, true);
-		$main['active'] = 'gallery';	
+		$main['active'] = 'items';
 
 		/* Load the site template with the page. */
 		$data['header'] = $this->load->view('template/header', '', true);
@@ -54,9 +54,10 @@ class Item extends CI_Controller {
 		$data['products'] = $products;
 		$data['show_top_sellers'] = false;
 		$data['active_category'] = $category;
-		
-		$main['main_content'] = $this->load->view('item/listing', $data, true);
-		$main['active'] = 'gallery';	
+
+        $main['active_category'] = $category;
+        $main['main_content'] = $this->load->view('item/listing', $data, true);
+		$main['active'] = 'items';
 
 		/* Load the site template with the page. */
 		$data['header'] = $this->load->view('template/header', '', true);
@@ -71,6 +72,29 @@ class Item extends CI_Controller {
 	 */
 	public function show_item($item_id)
 	{
-		die("Show item page");
+        // stdClass Object ( [name] => Test item 1 [price] => 195 [idproduct] => 22 [descript] => Hejsan test test [img] => img src!! [img_thumb] => thumb!! )
+
+        /**
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+         */
+
+        $product = $this->products_model->get_dummy_items(1);
+        $data['product'] = reset($product);
+        $data['show_top_sellers'] = false;
+        $data['active_category'] = '1';
+
+        $main['active_category'] = '1';
+        $main['main_content'] = $this->load->view('item/single', $data, true);
+        $main['active'] = 'items';
+
+        /* Load the site template with the page. */
+        $data['header'] = $this->load->view('template/header', '', true);
+        $data['main'] = $this->load->view('template/main', $main, true);
+        $data['footer'] = $this->load->view('template/footer', '', true);
+        $this->load->view('template/site', $data);
 	}
 }

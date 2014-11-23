@@ -3,15 +3,16 @@
 <div class="container">
 
     <!-- Person description -->
-    <div id="contact-blob" class="hero-unit std-box-color">
+    <div id="contact-blob" class="hero-unit std-box-color col-md-offset-1">
         <h1>This is me</h1>
         <p>Firstname Lastname</p>
+
         <div class="row">
-            <div class="span4">
+            <div class="col-md-3">
                 <img src="holder.js/300x200">
             </div>
 
-            <div class="span6">
+            <div class="col-md-6 col-md-offset-1">
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                 ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                 laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in

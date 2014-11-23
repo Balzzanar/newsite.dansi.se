@@ -14,25 +14,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Project name</a>
+                    <a class="navbar-brand" href="<?php echo base_url(); ?>">Dansi.se</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+
+                        <li class="dropdown <?php echo ($active == 'items' ? 'active' : '');?>">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Smycken <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li class="<?php echo ($active == 'items' && empty($active_category) ? 'active' : '');?>"><a href="<?php echo base_url().'items'; ?>">Alla</a></li>
+                                <li class="<?php echo ($active == 'items' && !empty($active_category) && $active_category == '1' ? 'active' : '');?>"><a href="<?php echo base_url().'items/1'; ?>">Örhängen</a></li>
+                                <li class="<?php echo ($active == 'items' && !empty($active_category) && $active_category == '2' ? 'active' : '');?>"><a href="<?php echo base_url().'items/2'; ?>">Armband</a></li>
+                                <li class="<?php echo ($active == 'items' && !empty($active_category) && $active_category == '3' ? 'active' : '');?>"><a href="<?php echo base_url().'items/3'; ?>">Halsband</a></li>
                             </ul>
                         </li>
+                        <li class="<?php echo ($active == 'contact' ? 'active' : '');?>"><a href="<?php echo base_url().'contact'; ?>">Kontakt</a></li>
+
                     </ul>
                 </div>
             </div>
