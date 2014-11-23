@@ -20,9 +20,11 @@
         <?php endif; ?>
 
             <div class="col-md-3 col-sm-3 col-xs-6">
-                <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-                <br />
-                <h4 class="featurette-heading"><?php echo $product->name; ?></h4>
+                <a href="<?php echo base_url().'item/'.$product->idproduct;?>">
+                    <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+                    <br />
+                    <h4 class="featurette-heading"><?php echo $product->name; ?></h4>
+                </a>
             </div>
 
         <?php $index++; ?>
