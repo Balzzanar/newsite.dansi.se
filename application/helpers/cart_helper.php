@@ -90,7 +90,8 @@ class Cart_helper
         $_tot = 0;
         foreach($items as $item)
         {
-            $_tot = $_tot + $item->price;
+
+            $_tot = $_tot + ($item->price * $item->num);
         }
         $_cart->total = $_tot;
         $_SESSION[Cart_helper::_get_cart_name()] = $_cart;

@@ -30,13 +30,14 @@
                             <tr>
                                 <td><?php echo $item->name; ?></td>
                                 <td>Örhänge</td>
-                                <td><?php echo $item->price; ?></td>
+                                <td><?php echo $item->price * $item->num; echo ' ('.$item->num.'st)'; ?></td>
                                 <td><a href="<?php echo base_url().'cart/remove/'.$item->idproduct;?>"><span class="glyphicon glyphicon-trash"></span></a></td>
                             </tr>
                         <?php endforeach; ?>
                     </table>
             </div>
         </div>
+        <div class="col-md-3 col-md-offset-8"><h4>Totalt: <?php echo $cart->total; ?></h4></div>
         <br />
 
     </div>
