@@ -19,8 +19,9 @@ class Cart extends CI_Controller {
     public function index()
     {
         $_cart = Cart_helper::get_cart();
+        $data['cart'] = $_cart;
         $main['cart'] = $_cart;
-        $main['main_content'] = $this->load->view('cart/index', '', true);
+        $main['main_content'] = $this->load->view('cart/index', $data, true);
         $main['active'] = 'cart';
 
         /* Load the site template with the page. */
@@ -36,7 +37,16 @@ class Cart extends CI_Controller {
         redirect(base_url().'item/'.$itemid);
     }
 
+    public function remove($itemid)
+    {
+        Cart_helper::remove($itemid);
+        redirect(base_url().'cart');
+    }
 
+    public function kill()
+    {
+        Cart_helper::cart_destroy();
+    }
 
 
 
