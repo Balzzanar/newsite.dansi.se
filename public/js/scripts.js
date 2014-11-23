@@ -15,3 +15,9 @@ function setActiveCategory(category){
 		cur_cat.value = category;
 	}
 }
+
+
+$( "#addbtn" ).click(function() {
+    var url = "http://localhost:8888/newsite.dansi.se/cart/add/" + $( "#addbtn").attr("item-id");
+    window.location.href = url;
+});

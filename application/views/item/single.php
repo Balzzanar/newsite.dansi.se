@@ -39,14 +39,12 @@
                         </tr>
                     </table>
                 </div>
-                <button type="button" class="btn btn-default dropdown-toggle"><span class="glyphicon glyphicon-shopping-cart"></span> Lägg i kundvagnen</button>
-
+                <button id="addbtn" item-id="<?php echo $product->idproduct;?>" type="button" class="btn btn-default dropdown-toggle"><span class="glyphicon glyphicon-shopping-cart"></span> Lägg i kundvagnen</button>
             </div>
         </div>
         <br />
 
     </div>
-
 
     <!-- End Main Site container -->
 </div>

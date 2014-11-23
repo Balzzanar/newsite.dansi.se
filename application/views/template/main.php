@@ -29,7 +29,7 @@
                             </ul>
                         </li>
                         <li class="<?php echo ($active == 'contact' ? 'active' : '');?>"><a href="<?php echo base_url().'contact'; ?>">Kontakt</a></li>
-
+                        <li id="cart-nav" class="<?php echo ($active == 'cart' ? 'active' : '');?>"><a href="<?php echo base_url().'cart'; ?>"><span class="glyphicon glyphicon-shopping-cart"></span> Kundvagn <span class="badge"><?php echo count($cart->items); ?></span></a></li>
                     </ul>
                 </div>
             </div>

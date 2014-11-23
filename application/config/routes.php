@@ -44,6 +44,8 @@ $route['404_override'] = '';
 
 $route['contact'] = 'contact';
 
+$route['cart/add/(:num)'] = 'cart/add/$1';
+
 $route['newproducts'] = 'newproducts/index';
 #$route['newproducts'] = 'error';
 

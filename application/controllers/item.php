@@ -34,6 +34,8 @@ class Item extends CI_Controller {
 		$data['show_top_sellers'] = true;
 		$data['active_category'] = '';
 
+        $_cart = Cart_helper::get_cart();
+        $main['cart'] = $_cart;
 		$main['main_content'] = $this->load->view('item/listing', $data, true);
 		$main['active'] = 'items';
 
@@ -55,6 +57,8 @@ class Item extends CI_Controller {
 		$data['show_top_sellers'] = false;
 		$data['active_category'] = $category;
 
+        $_cart = Cart_helper::get_cart();
+        $main['cart'] = $_cart;
         $main['active_category'] = $category;
         $main['main_content'] = $this->load->view('item/listing', $data, true);
 		$main['active'] = 'items';
@@ -87,6 +91,8 @@ class Item extends CI_Controller {
         $data['show_top_sellers'] = false;
         $data['active_category'] = '1';
 
+        $_cart = Cart_helper::get_cart();
+        $main['cart'] = $_cart;
         $main['active_category'] = '1';
         $main['main_content'] = $this->load->view('item/single', $data, true);
         $main['active'] = 'items';

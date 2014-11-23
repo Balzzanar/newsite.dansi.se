@@ -159,3 +159,30 @@ body {
 #singleitem-blob {
     margin-top: 100px;
 }
+
+/* CART CSS
+------------------------- */
+@media (min-width: 768px) {
+    #cart-nav {
+        margin-left: 270px;
+    }
+}
+
+@media (min-width: 900px) {
+    #cart-nav {
+        margin-left: 300px;
+    }
+}
+
+@media (min-width: 1000px) {
+    #cart-nav {
+        margin-left: 500px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #cart-nav {
+    margin-left: 700px;
+    }
+}
+

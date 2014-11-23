@@ -15,6 +15,8 @@ class Contact extends CI_Controller {
 	
 	public function index()
 	{
+        $_cart = Cart_helper::get_cart();
+        $main['cart'] = $_cart;
 		$main['main_content'] = $this->load->view('contact/index', '', true);
 		$main['active'] = 'contact';
 

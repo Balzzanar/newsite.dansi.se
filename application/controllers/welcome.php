@@ -27,6 +27,8 @@ class Welcome extends CI_Controller {
         $products = $this->products_model->get_dummy_items(3);
         $data['products'] = $products;
 
+        $_cart = Cart_helper::get_cart();
+        $main['cart'] = $_cart;
 		$main['main_content'] = $this->load->view('welcome/index', $data, true);
 		$main['active'] = 'home';
 
