@@ -23,7 +23,7 @@
 
         <br />
         <!-- Contact Information Table -->
-        <div class="span4">
+        <div class="col-md-4">
             <table class="table contact-table">
                 <tr>
                     <td>Email:</td>
