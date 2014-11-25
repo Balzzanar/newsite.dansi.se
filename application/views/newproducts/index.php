@@ -7,10 +7,10 @@
 *
 */
 ?>
-
+<div class="container">
 <?php #echo form_open_mulitpart('newproducts/upload');?>
 <form class="form-horizontal" action="newproducts/newproduct" method="post" enctype="multipart/form-data">
-<div class="span6 new-product-form"> <!-- Form Start -->	
+<div class="col-md-8 new-product-form"> <!-- Form Start -->
 	<div class="well new-product-form">
 		<b>Produktnamn och bild</b>
 	</div>
@@ -58,16 +58,13 @@
 
 </div>
 
-	
-</form>
-</div> <!-- Form END -->
+</form> <!-- Form END -->
 
-<div class="clear" ></div>
-<div class="span12">
-	<div class="well span6">
+    <div class="col-md-8"> <!-- Table -->
+	<div class="well">
                 <b>Befintliga prdukter</b>
         </div>
-	<table class="span12 table table-striped">
+	<table class="table table-striped">
 	  <tr>
 	  	<th>Namn</th>
 	  	<th>Pris</th>
@@ -87,8 +84,9 @@
 	  </tr>
 	<?php endforeach; ?>
 	</table>
+    </div> <!-- ./table -->
+</div> <!-- ./container -->
 
-</div>
 
 
 <!-- Bootstrap core JavaScript

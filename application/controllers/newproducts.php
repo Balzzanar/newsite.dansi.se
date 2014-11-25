@@ -16,10 +16,10 @@
 class Newproducts extends CI_Controller {
 
 	public function index()
-	{	
+	{
 		if ($_SERVER['REMOTE_ADDR'] != MASTER_IP_RED_PRODUCTS)
 		{
-			redirect('/');				
+			redirect('/');
 		}
 
 		$this->load->model('products_model');
@@ -28,7 +28,7 @@ class Newproducts extends CI_Controller {
 		$main['active'] = 'home';
 
 		$data['header'] = $this->load->view('template/header', '', true);
-		$data['main'] = $this->load->view('template/main', $main, true);
+		$data['main'] = $this->load->view('template/main_special', $main, true);
 	//	$data['footer'] = $this->load->view('template/footer', '', true);
 
 		$this->load->view('template/site', $data);

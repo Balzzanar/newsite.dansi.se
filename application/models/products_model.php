@@ -53,7 +53,7 @@ class Products_model extends CI_Model
 	{
 		$config = array (
 				'allowed_types' => 'jpg|jpeg|png',
-				'upload_path' => realpath(APPPATH.'../public/uploads'),
+				'upload_path' => realpath(base_url().'public/uploads'),
 				'file_name' => time()
 			);
 		$this->load->library('upload', $config);
