@@ -3,7 +3,7 @@
 # Deploy script for dansi.se sql scripts
 #
 #------------------------------------------------
-db='dansidb'
+db='<db>'
 user='<user>'
 pass='<passwd>'
 
@@ -20,6 +20,11 @@ mysql -u "$user" -p"$pass" "$db" < tbl_dansi_products.sql
 echo 'TBL: dansi_sales'
 mysql -u "$user" -p"$pass" "$db" < tbl_dansi_sales.sql
 
+echo 'TBL: dansi_orders'
+mysql -u "$user" -p"$pass" "$db" < tbl_dansi_orders.sql
+
+echo 'TBL: dansi_orderproducts'
+mysql -u "$user" -p"$pass" "$db" < tbl_dansi_orderproducts.sql
 
 #------------------------------------------------
 # Stored Procedure deploy scripts
@@ -35,3 +40,13 @@ mysql -u "$user" -p"$pass" "$db" < pro_dansi_product_get.sql
 
 echo 'PRO: dansi_product_new'
 mysql -u "$user" -p"$pass" "$db" < pro_dansi_product_new.sql
+
+echo 'PRO: dansi_product_del'
+mysql -u "$user" -p"$pass" "$db" < pro_dansi_product_del.sql
+
+echo 'PRO: dansi_product_upd'
+mysql -u "$user" -p"$pass" "$db" < pro_dansi_product_upd.sql
+
+echo 'PRO: dansi_order_new'
+mysql -u "$user" -p"$pass" "$db" < pro_dansi_order_new.sql
+
