@@ -52,10 +52,10 @@ class Products_model extends CI_Model
 	public function uploadImg()
 	{
 		$config = array (
-				'allowed_types' => 'jpg|jpeg|png',
-				'upload_path' => realpath(base_url().'public/uploads'),
-				'file_name' => time()
-			);
+                                'allowed_types' => 'jpg|jpeg|png',
+                                'upload_path' => dirname($_SERVER["SCRIPT_FILENAME"]).'/application/public/upload',
+                                'file_name' => time()
+                        );
 		$this->load->library('upload', $config);
 
 
