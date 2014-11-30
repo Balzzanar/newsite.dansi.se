@@ -18,7 +18,7 @@
 
         <div class="row">
             <div class="col-md-5">
-                <img src="holder.js/500x350">
+                <img src="<?php echo $product->img; ?>">
             </div>
 
             <div class="col-md-6 col-md-offset-1">
