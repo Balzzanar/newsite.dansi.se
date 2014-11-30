@@ -21,7 +21,7 @@
 
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <a href="<?php echo base_url().'item/'.$product->idproduct;?>">
-                    <img class="featurette-image img-responsive" data-src="<?php echo $product->img_thumb; ?>" alt="Generic placeholder image">
+                    <img class="featurette-image img-responsive" src="<?php echo $product->img_thumb; ?>" alt="Generic placeholder image">
                     <br />
                     <h4 class="featurette-heading"><?php echo $product->name; ?></h4>
                 </a>

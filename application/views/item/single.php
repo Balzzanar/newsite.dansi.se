@@ -18,7 +18,7 @@
 
         <div class="row">
             <div class="col-md-5">
-                <img src="<?php echo $product->img; ?>">
+                <img src="<?php echo $product->img; ?>" height="400" width="400"">
             </div>
 
             <div class="col-md-6 col-md-offset-1">
