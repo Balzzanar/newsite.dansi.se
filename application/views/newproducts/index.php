@@ -78,9 +78,9 @@
 	  	<td><?php echo $prod->name; ?></td>
 	  	<td><?php echo $prod->price; ?></td>
 	  	<td><?php echo $prod->descript; ?></td>
-	  	<td><?php echo $prod->img; ?></td>
-	  	<td><?php echo ''; ?></td>
-	  	<td><a href="#">X</a></td>
+	  	<td><img src="<?php echo $prod->img_thumb; ?>"></td>
+        <td><?php echo "?"; ?></td>
+        <td><a href="<?php echo base_url().'newproducts/del/'.$prod->idproduct?>">X</a></td>
 	  </tr>
 	<?php endforeach; ?>
 	</table>

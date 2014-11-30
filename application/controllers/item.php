@@ -26,8 +26,10 @@ class Item extends CI_Controller {
 	 */
 	public function listing()
 	{
-		$products = $this->products_model->get_dummy_items(6);
+		// $products = $this->products_model->get_dummy_items(6);
+		$products = $this->products_model->get_all_products();
 		$data['products'] = $products;
+
 
         /* The best selling products */
         $data['best_products'] = $this->products_model->get_dummy_items(3);
@@ -52,7 +54,7 @@ class Item extends CI_Controller {
 	 */
 	public function category_listing($category)
 	{
-		$products = $this->products_model->get_dummy_items(2);
+        $products = $this->products_model->get_all_products($category);
 		$data['products'] = $products;
 		$data['show_top_sellers'] = false;
 		$data['active_category'] = $category;
@@ -76,6 +78,11 @@ class Item extends CI_Controller {
 	 */
 	public function show_item($item_id)
 	{
+/*        echo '<pre>';
+        print_r($product);
+        echo '</pre>';die;
+*/
+
         // stdClass Object ( [name] => Test item 1 [price] => 195 [idproduct] => 22 [descript] => Hejsan test test [img] => img src!! [img_thumb] => thumb!! )
 
         /**
@@ -86,8 +93,14 @@ class Item extends CI_Controller {
         non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
          */
 
-        $product = $this->products_model->get_dummy_items(1);
-        $data['product'] = reset($product);
+        $product = $this->products_model->get_product($item_id);
+        if ($product === false)
+        {
+            /* The item dose not exist! */
+            redirect('/items');
+        }
+
+        $data['product'] = $product;
         $data['show_top_sellers'] = false;
         $data['active_category'] = '1';
 

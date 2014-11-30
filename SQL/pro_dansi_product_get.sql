@@ -9,17 +9,17 @@ DELIMITER //
 */
 
 DROP PROCEDURE IF EXISTS dansi_product_get;
-
 CREATE PROCEDURE `dansi_product_get` (IN inID INT)
 
 BEGIN
 	SELECT
-		p.id_product
+		p.id_product as 'idproduct'
 		,p.name
 		,p.price
 		,p.descript
 		,p.img
 		,p.img_thumb
+    ,p.category
 		,s.num
 	FROM
     dansi_products p

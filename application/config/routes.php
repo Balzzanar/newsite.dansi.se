@@ -47,6 +47,7 @@ $route['contact'] = 'contact';
 $route['cart/add/(:num)'] = 'cart/add/$1';
 
 $route['newproducts'] = 'newproducts/index';
+$route['newproducts/del/(:num)'] = 'newproducts/delete_product/$1';
 #$route['newproducts'] = 'error';
 
 $route['items'] = 'item/listing';

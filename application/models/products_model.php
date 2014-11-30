@@ -17,31 +17,35 @@
 */
 class Products_model extends CI_Model 
 {
-	/**
-	 * Collects all the products from the database
-	 * and returns them in an array.
-	 * 
-	 * @return array
-	 */
-	public function get_all_products()
+    /**
+     * Collects all the products from the database
+     * and returns them in an array.
+     * If the category options is set, then only the once from
+     * that given category will be returned.
+     *
+     * @param $category
+     * @return array
+     */
+	public function get_all_products($category = -1)
 	{
-		$this->load->database();
-
-		$sql = "CALL dansi_products_get()";
-		$query = $this->db->query($sql);
-		$result = $query->result(); 
-		return $result;
-	}
-
-
-	/**
-	 * Returns a product given it's id.
-	 *
-	 * @return array
-	 */
-	public function get_project_by_id($id_product)
-	{
-
+		$sql = "CALL dansi_products_get(?)";
+        $params = array(
+            $category
+        );
+		$query = $this->db->query($sql, $params);
+        $products = array();
+        if (isset($query->num_rows))
+        {
+            $results = $query->result();
+            foreach($results as $result)
+            {
+                $product = $result;
+                $product->img = base_url().'public/images/'.$product->img;
+                $product->img_thumb = base_url().'public/images/'.$product->img_thumb;
+                $products[] = $product;
+            }
+        }
+		return $products;
 	}
 
 	/**
@@ -78,7 +82,6 @@ class Products_model extends CI_Model
 	 */
 	public function store_new_product($product)
 	{
-		$this->load->database();
 		echo 'Will store this product to the database: '."<br /><br />";
 		var_dump($product);
 		$sql = "CALL dansi_product_new(?,?,?,?,?)";
@@ -87,10 +90,27 @@ class Products_model extends CI_Model
 			$product['price'],
 			$product['descript'],
 			$product['uploaded_file'],
-			'' // No thumb image, so far!
+            "thumb_".$product['uploaded_file']
 		);
-                $query = $this->db->query($sql, $params);
+        $query = $this->db->query($sql, $params);
 	}
+
+    public function get_product($id_product)
+    {
+        $sql = "CALL dansi_product_get(?)";
+        $params = array(
+            $id_product
+        );
+        $query = $this->db->query($sql, $params);
+        if (isset($query->num_rows) && $query->num_rows > 0)
+        {
+            $product = reset($query->result());
+            $product->img = base_url().'public/images/'.$product->img;
+            $product->img_thumb = base_url().'public/images/'.$product->img_thumb;
+            return $product;
+        }
+        return false;
+    }
 
 	/**
 	* Dummy data!
@@ -113,5 +133,19 @@ class Products_model extends CI_Model
 		
 		return $arr;
 	}
+
+    /**
+     * Mark the product for deletion
+     *
+     * @param $idproduct
+     */
+    public function delete_product($idproduct)
+    {
+        $sql = "CALL dansi_product_del(?)";
+        $params = array(
+            $idproduct
+        );
+        $query = $this->db->query($sql, $params);
+    }
 
 }

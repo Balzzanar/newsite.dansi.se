@@ -19,7 +19,7 @@ class Newproducts extends CI_Controller {
 	{
 		if ($_SERVER['REMOTE_ADDR'] != MASTER_IP_RED_PRODUCTS)
 		{
-			redirect('/');
+		//	redirect('/');
 		}
 
 		$this->load->model('products_model');
@@ -43,7 +43,7 @@ class Newproducts extends CI_Controller {
 	{
 		if ($_SERVER['REMOTE_ADDR'] != MASTER_IP_RED_PRODUCTS)
                 {
-                        redirect('/');
+                  //      redirect('/');
                 }
 		
 		$this->load->model('products_model');
@@ -97,4 +97,11 @@ class Newproducts extends CI_Controller {
 		}
 		
 	}
+
+    public function delete_product($idproduct)
+    {
+        $this->load->model('products_model');
+        $this->products_model->delete_product($idproduct);
+        redirect('/newproducts');
+    }
 }
