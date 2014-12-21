@@ -12,3 +12,7 @@ application/logs/*
 
 # Jetbrains stuff
 .idea
+
+# No images!
+*.jpeg
+*.jpg
